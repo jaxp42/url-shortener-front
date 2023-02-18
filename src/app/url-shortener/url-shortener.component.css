@@ -1,0 +1,15 @@
+.header-title{
+    width: 100%;
+    padding-top: 10%;
+    padding-bottom: 3%;
+    color:white;
+    background-color: red;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.content{
+    width: 80%;
+}
