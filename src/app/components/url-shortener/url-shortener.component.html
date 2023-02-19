@@ -8,8 +8,8 @@
             <button type="button" class="btn btn-primary btn-short-url">Short url</button>
         </div>
 
-        <div class="result-content">
-            <p>The url result is:</p>
+        <div *ngIf="resultUrl != ''" class="result-content">
+            <p>The url result is: </p>
         </div>
     </div>
 </div>

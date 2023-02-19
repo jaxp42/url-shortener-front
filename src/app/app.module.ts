@@ -5,10 +5,10 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap'; //bootstrap
 
 //component imports
 import { AppComponent } from './app.component';
-import { UrlShortenerComponent } from './url-shortener/url-shortener.component';
-import { UrlGeneratedTableComponent } from './url-generated-table/url-generated-table.component';
-import { HeaderComponent } from './header/header.component';
-import { RedirectComponent } from './redirect/redirect.component';
+import { UrlShortenerComponent } from './components/url-shortener/url-shortener.component';
+import { UrlGeneratedTableComponent } from './components/url-generated-table/url-generated-table.component';
+import { HeaderComponent } from './components/header/header.component';
+import { RedirectComponent } from './components/redirect/redirect.component';
 
 @NgModule({
   declarations: [
