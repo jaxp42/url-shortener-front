@@ -1,0 +1,30 @@
+.header-title{
+    width: 100%;
+    padding-top: 10%;
+    padding-bottom: 3%;
+    color: white;
+    background-color: #49c5b6;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu-options{
+    display: flex;
+    justify-content: space-around;
+    border-bottom: 1px solid #2779a7;
+}
+
+.menu-options div{
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    padding: 2%;
+}
+
+.menu-options div:hover{
+    cursor: pointer;
+    background-color: #2779a7;
+    color: white;
+}

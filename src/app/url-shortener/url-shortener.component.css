@@ -1,15 +1,19 @@
-.header-title{
-    width: 100%;
-    padding-top: 10%;
-    padding-bottom: 3%;
-    color:white;
-    background-color: red;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
 .content{
     width: 80%;
+    margin: 0 auto;
+    margin-top: 5%;
+}
+
+#urlTextarea{
+    margin-bottom: 3%;
+}
+
+.btn-short-url{
+    margin: 0 auto;
+}
+
+.result-content{
+    margin-top: 10%;
+    border: 1px solid green;
+    border-radius: 5px;
 }

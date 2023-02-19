@@ -1,0 +1,16 @@
+.content{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center ;
+}
+
+.redirecting-logo{
+    background-color: #49c5b6;
+    padding: 2% 5%;
+    min-width: 200px;
+    text-align: center;
+    color: rgb(238, 238, 238);
+}
+

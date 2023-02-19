@@ -1,0 +1,19 @@
+<div class="header">
+    <div class="header-title">
+        <h1 class="title">URL SHORTENER</h1>
+    </div>
+
+    <div class="menu-options">
+        <div class="title" (click)="selectNewUrlCreation()">Create new url</div>
+        <div class="title" (click)="selectShowUrls()">Show created url's</div>
+    </div>
+</div>
+
+<!--here are the different components-->
+<div *ngIf="isNewUrlCreationSelected">
+    <app-url-shortener></app-url-shortener>
+</div>
+
+<div *ngIf="isShowUrlsSelected">
+    <app-url-generated-table></app-url-generated-table>
+</div>
