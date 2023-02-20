@@ -1,5 +1,5 @@
 export interface ShortUrl {
-    id: number;
-    shortUrl: String;
-    originalUrl: String;
+    id?: number;
+    shortUrl: string;
+    originalUrl: string;
 }

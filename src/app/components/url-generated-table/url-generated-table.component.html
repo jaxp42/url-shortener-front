@@ -1,17 +1,24 @@
 <div class="main-content">
     <div class="content">
-        <p>Your created Urls:</p>
+        <p>Your created URLs:</p>
         <div class="url-list">
             <table class="table">
-                <thead class="thead-dark">
+                <thead class="table-header">
                     <tr>
-                        <th>Short url</th>
-                        <th>Original url</th>
+                        <th>Short URL</th>
+                        <th>Original URL</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody>
-
+                    <tr *ngFor="let url of getUrls">
+                        <td>{{url.shortUrl}}</td>
+                        <td>{{url.originalUrl}}</td>
+                        <td class="action-buttons">
+                            <span class="material-icons action-icon copy" (click)="copyUrl(url.shortUrl)">content_copy</span>
+                            <span class="material-icons action-icon delete" (click)="deleteUrl(url.id!)">delete</span>
+                        </td>
+                    </tr>
                 </tbody>
             </table>
         </div>

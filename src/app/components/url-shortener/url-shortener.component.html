@@ -2,14 +2,17 @@
     <div class="content">
         <div class="url-shortener-form">
             <div class="form-floating">
-                <p>Write here the url you want to short:</p>
-                <textarea class="form-control" placeholder="Write the url here" id="urlTextarea"></textarea>
+                <p>Write here the URL you want to short:</p>
+                <textarea id="urlTextarea" class="form-control" placeholder="Write the url here" [(ngModel)]="urlToShort"></textarea>
             </div>
-            <button type="button" class="btn btn-primary btn-short-url">Short url</button>
+            <button type="button" class="btn btn-primary btn-short-url" (click)="createUrl()">Short URL</button>
         </div>
 
-        <div *ngIf="resultUrl != ''" class="result-content">
-            <p>The url result is: </p>
+        <div *ngIf="isCreated" class="result-content">
+            <div class="alert alert-success result-message" role="alert">
+                <span>{{getResultUrl.shortUrl}}</span>
+                <span class="material-icons action-icon-copy copy-result" (click)="copyUrl()">content_copy</span>
+            </div>
         </div>
     </div>
 </div>

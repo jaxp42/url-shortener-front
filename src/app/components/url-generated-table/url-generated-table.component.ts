@@ -15,9 +15,23 @@ export class UrlGeneratedTableComponent {
 
   private urls: ShortUrl[] = [];
 
-  constructor(private urlShortenerService: UrlShortenerService){}
+  constructor(private urlShortenerService: UrlShortenerService){
+    this.loadUrls();
+  }
 
   loadUrls(): void {
-    this.urlShortenerService.getAllUrl();
+    this.urls = this.urlShortenerService.getAllUrl();
+  }
+
+  copyUrl(url: string): void {
+    navigator.clipboard.writeText(url);
+  }
+
+  deleteUrl(id: number): void {
+    this.urlShortenerService.deleteUrlById(id);
+  }
+
+  get getUrls(): ShortUrl[]{
+    return this.urls;
   }
 }

@@ -3,3 +3,22 @@
     margin: 0 auto;
     margin-top: 5%;
 }
+
+.table-header{
+    background-color: rgb(48, 48, 48);
+    color: rgb(238, 237, 237);
+}
+
+.button-action{
+    width:10px;
+    height: 20px;
+    margin-right: 2%;
+}
+
+.action-icon:hover{
+    cursor: pointer;
+}
+
+.copy{
+    margin-right: 10px;
+}

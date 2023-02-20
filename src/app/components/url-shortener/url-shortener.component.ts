@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ShortUrl } from 'src/app/interfaces/shortUrl';
 
 //services
 import { UrlShortenerService } from '../../services/url-shortener/url-shortener.service';
@@ -11,11 +12,22 @@ import { UrlShortenerService } from '../../services/url-shortener/url-shortener.
 
 export class UrlShortenerComponent {
 
-  resultUrl: String = "";
+  private resultUrl: ShortUrl = {} as ShortUrl;
+  urlToShort: string = ""
+  isCreated: boolean = false;
 
   constructor(private urlShortenerService: UrlShortenerService) {}
 
   createUrl(): void {
-    this.urlShortenerService.createUrl("url");
+    this.resultUrl = this.urlShortenerService.createUrl(this.urlToShort);
+    this.isCreated = true;
+  }
+
+  copyUrl(): void {
+    navigator.clipboard.writeText(this.resultUrl.shortUrl);
+  }
+
+  get getResultUrl(): ShortUrl{
+    return this.resultUrl;
   }
 }

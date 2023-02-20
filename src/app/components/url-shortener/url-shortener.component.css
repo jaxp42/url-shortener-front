@@ -14,6 +14,23 @@
 
 .result-content{
     margin-top: 10%;
-    border: 1px solid green;
     border-radius: 5px;
+}
+
+.result-message{
+    display: flex;
+    justify-content: space-between;
+}
+
+.copy-result:hover{
+    cursor: pointer;
+}
+
+button{
+    background-color: #2779a7;
+    border-color: #2779a7;
+}
+
+button:hover{
+    background-color: #103449;
 }
