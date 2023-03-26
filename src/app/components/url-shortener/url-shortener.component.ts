@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { ShortUrl } from 'src/app/interfaces/shortUrl';
 
 //services
-import { UrlShortenerService } from '../../services/url-shortener/url-shortener.service';
+import { BackendService } from 'src/app/services/backend-serivce/backend.service';
 
 @Component({
   selector: 'app-url-shortener',
@@ -16,10 +16,14 @@ export class UrlShortenerComponent {
   urlToShort: string = ""
   isCreated: boolean = false;
 
-  constructor(private urlShortenerService: UrlShortenerService) {}
+  constructor(private backendService: BackendService) {}
 
   createUrl(): void {
-    this.resultUrl = this.urlShortenerService.createUrl(this.urlToShort);
+    this.backendService.postUrl(this.urlToShort)
+      .then(res => {
+        
+      })
+      .catch();
     this.isCreated = true;
   }
 

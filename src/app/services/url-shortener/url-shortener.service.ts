@@ -17,8 +17,17 @@ export class UrlShortenerService {
     return this.backendService.postUrl(url);
   }
 
-  getAllUrl(): ShortUrl[] {
-    return this.backendService.getAllUrls();
+  async getAllUrl() {
+    var shortUrlList: ShortUrl[] = [];
+
+    await this.backendService.getAllUrls()
+    .then(res => {
+      console.log(res);
+      shortUrlList = res;
+    })
+    .catch();
+
+    return shortUrlList;
   }
 
   getUrlByShortValue(url: string): ShortUrl{

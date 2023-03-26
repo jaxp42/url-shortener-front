@@ -1,10 +1,9 @@
 import { Component } from '@angular/core';
 
-//services
-import { UrlShortenerService } from '../../services/url-shortener/url-shortener.service';
 
 //interfaces
 import { ShortUrl } from '../../interfaces/shortUrl';
+import { BackendService } from 'src/app/services/backend-serivce/backend.service';
 
 @Component({
   selector: 'app-url-generated-table',
@@ -15,12 +14,18 @@ export class UrlGeneratedTableComponent {
 
   private urls: ShortUrl[] = [];
 
-  constructor(private urlShortenerService: UrlShortenerService){
+  constructor(private backendService: BackendService){
     this.loadUrls();
   }
 
   loadUrls(): void {
-    this.urls = this.urlShortenerService.getAllUrl();
+    this.backendService.getAllUrls()
+      .then(res => {
+        this.urls = res;
+      })
+      .catch(error => {
+        console.log("ERROR LOADING URLS");
+      })
   }
 
   copyUrl(url: string): void {
@@ -28,7 +33,14 @@ export class UrlGeneratedTableComponent {
   }
 
   deleteUrl(id: number): void {
-    this.urlShortenerService.deleteUrlById(id);
+    this.backendService.deleteUrlById(id)
+      .then(res => {
+        console.log(res);
+        this.loadUrls();
+      })
+      .catch(error => {
+        console.log(error);
+      })
   }
 
   get getUrls(): ShortUrl[]{
